@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiki Fujimura — Chibi Art & Stories</title>
+<meta name="description" content="Kiki Fujimura's chibi and gacha-life style anime art, featuring the original story series Tier School Star.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lavender: #C8B6FF;
+    --bubblegum: #FFB6D9;
+    --sky-candy: #A6E3E9;
+    --sun-glow: #FFE066;
+    --ink: #352F44;
+    --paper: #FFF8F3;
+    --card: #FFFFFF;
+    --line: #E7DCEE;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Nunito', sans-serif;
+    line-height:1.6;
+  }
+
+  h1,h2,h3, .display{
+    font-family:'Baloo 2', sans-serif;
+    margin:0;
+  }
+
+  a{ color:inherit; }
+
+  img{ max-width:100%; display:block; }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    position:relative;
+    padding:90px 24px 120px;
+    text-align:center;
+    background:
+      radial-gradient(circle at 15% 20%, var(--sky-candy) 0, transparent 40%),
+      radial-gradient(circle at 85% 15%, var(--sun-glow) 0, transparent 38%),
+      radial-gradient(circle at 50% 90%, var(--bubblegum) 0, transparent 45%),
+      var(--lavender);
+    overflow:hidden;
+  }
+
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-1px;
+    height:60px;
+    background:var(--paper);
+    clip-path: polygon(0 100%, 100% 100%, 100% 40%, 92% 60%, 84% 35%, 76% 62%, 68% 30%, 60% 60%, 52% 32%, 44% 58%, 36% 28%, 28% 60%, 20% 32%, 12% 58%, 4% 30%, 0 55%);
+  }
+
+  .hero-badge{
+    display:inline-block;
+    background:var(--paper);
+    color:var(--ink);
+    font-weight:700;
+    font-size:0.8rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:7px 18px;
+    border-radius:999px;
+    box-shadow: 3px 3px 0 var(--ink);
+    margin-bottom:28px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.4rem);
+    font-weight:800;
+    color:#fff;
+    text-shadow: 3px 3px 0 var(--ink);
+    letter-spacing:.01em;
+  }
+
+  .hero p.tagline{
+    max-width:520px;
+    margin:20px auto 0;
+    font-weight:700;
+    font-size:1.1rem;
+    color:var(--ink);
+  }
+
+  .hero-nav{
+    margin-top:36px;
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-nav a{
+    text-decoration:none;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    background:var(--ink);
+    color:var(--paper);
+    padding:10px 22px;
+    border-radius:14px;
+    border:2px solid var(--ink);
+    transition:transform .15s ease, background .15s ease;
+  }
+
+  .hero-nav a:hover{
+    transform:translateY(-3px);
+    background:transparent;
+    color:var(--ink);
+  }
+
+  /* ---------- SECTION LABELS ---------- */
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:0.85rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#8A7CA8;
+    margin-bottom:10px;
+  }
+
+  .eyebrow::before{
+    content:"★";
+    color:var(--sun-glow);
+    -webkit-text-stroke: 1px var(--ink);
+  }
+
+  section{ padding:80px 0; }
+
+  /* ---------- ABOUT ---------- */
+
+  .about{
+    display:grid;
+    grid-template-columns: 220px 1fr;
+    gap:44px;
+    align-items:start;
+  }
+
+  .avatar{
+    width:220px;
+    height:220px;
+    border-radius:50% 48% 52% 46% / 48% 52% 44% 56%;
+    background: linear-gradient(145deg, var(--bubblegum), var(--sky-candy));
+    border:3px solid var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    color:var(--ink);
+    text-align:center;
+    font-size:0.95rem;
+    padding:16px;
+    flex-shrink:0;
+  }
+
+  /* Replace the .avatar div's content with <img src="your-selfie-chibi.jpg" alt="Kiki Fujimura chibi avatar"> */
+
+  .speech-bubble{
+    position:relative;
+    background:var(--card);
+    border:3px solid var(--ink);
+    border-radius:26px;
+    padding:32px 34px;
+    box-shadow: 6px 6px 0 var(--line);
+  }
+
+  .speech-bubble::before{
+    content:"";
+    position:absolute;
+    left:-22px;
+    top:44px;
+    width:0; height:0;
+    border-top:14px solid transparent;
+    border-bottom:14px solid transparent;
+    border-right:22px solid var(--ink);
+  }
+
+  .speech-bubble::after{
+    content:"";
+    position:absolute;
+    left:-17px;
+    top:47px;
+    width:0; height:0;
+    border-top:11px solid transparent;
+    border-bottom:11px solid transparent;
+    border-right:18px solid var(--card);
+  }
+
+  .speech-bubble h2{ font-size:1.7rem; margin-bottom:14px; }
+
+  .speech-bubble p{ margin:0 0 12px; font-size:1.02rem; }
+
+  .speech-bubble p:last-child{ margin-bottom:0; }
+
+  .tag-row{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:18px;
+  }
+
+  .tag-pill{
+    background:var(--sun-glow);
+    border:2px solid var(--ink);
+    border-radius:999px;
+    padding:5px 14px;
+    font-weight:700;
+    font-size:0.8rem;
+  }
+
+  /* ---------- SERIES INTRO ---------- */
+
+  .series-banner{
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:28px;
+    padding:44px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .series-banner::before{
+    content:"";
+    position:absolute;
+    top:-60px; right:-60px;
+    width:220px; height:220px;
+    background:var(--bubblegum);
+    border-radius:50%;
+    opacity:.25;
+  }
+
+  .series-banner .eyebrow{ color:var(--sky-candy); }
+
+  .series-banner h2{
+    font-size:clamp(1.9rem, 4vw, 2.6rem);
+    color:#fff;
+    margin-bottom:16px;
+  }
+
+  .series-banner p{
+    max-width:640px;
+    font-size:1.05rem;
+    position:relative;
+    z-index:1;
+  }
+
+  .series-meta{
+    display:flex;
+    gap:26px;
+    flex-wrap:wrap;
+    margin-top:26px;
+    position:relative;
+    z-index:1;
+  }
+
+  .series-meta div{
+    background:rgba(255,255,255,.08);
+    border:2px solid rgba(255,255,255,.35);
+    border-radius:16px;
+    padding:12px 18px;
+    min-width:130px;
+  }
+
+  .series-meta span{
+    display:block;
+    font-family:'Baloo 2', sans-serif;
+    font-size:1.4rem;
+    font-weight:700;
+  }
+
+  .series-meta small{
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:0.7rem;
+    opacity:.8;
+  }
+
+  /* ---------- GALLERY ---------- */
+
+  .gallery-head{
+    text-align:center;
+    max-width:560px;
+    margin:0 auto 44px;
+  }
+
+  .gallery-head h2{ font-size:2rem; margin-bottom:10px; }
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap:26px;
+  }
+
+  .card{
+    background:var(--card);
+    border:3px solid var(--ink);
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    box-shadow: 5px 5px 0 var(--line);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+
+  .card:hover{
+    transform:translateY(-5px) rotate(-0.6deg);
+    box-shadow: 7px 8px 0 var(--line);
+  }
+
+  .card-art{
+    aspect-ratio: 3 / 4;
+    background:
+      repeating-linear-gradient(45deg, #F4EEFB, #F4EEFB 10px, #EFE6F9 10px, #EFE6F9 20px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:16px;
+    border-bottom:3px solid var(--ink);
+  }
+
+  /* To swap in real art: replace the .card-art div's content with
+     <img src="character-01.jpg" alt="Character name, Tier School Star"> */
+
+  .card-art span{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:600;
+    color:#8A7CA8;
+    font-size:0.9rem;
+  }
+
+  .tier-badge{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--sun-glow);
+    border:3px solid var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+    font-size:1rem;
+    transform:rotate(8deg);
+  }
+
+  .card-info{ padding:16px 16px 18px; }
+
+  .card-info h3{
+    font-size:1.05rem;
+    margin-bottom:4px;
+  }
+
+  .card-info p{
+    margin:0;
+    font-size:0.85rem;
+    color:#75688E;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    text-align:center;
+    padding:50px 24px 40px;
+  }
+
+  footer .display{
+    font-size:1.4rem;
+    margin-bottom:10px;
+  }
+
+  footer p{
+    opacity:.75;
+    font-size:0.9rem;
+    margin:0 0 18px;
+  }
+
+  .social-row{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .social-row a{
+    text-decoration:none;
+    font-weight:700;
+    font-family:'Baloo 2', sans-serif;
+    font-size:0.85rem;
+    border:2px solid rgba(255,255,255,.4);
+    padding:8px 16px;
+    border-radius:999px;
+  }
+
+  .social-row a:hover{ border-color:#fff; }
+
+  @media (max-width: 680px){
+    .about{ grid-template-columns:1fr; }
+    .avatar{ margin:0 auto; }
+    .speech-bubble::before, .speech-bubble::after{ display:none; }
+    section{ padding:56px 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .card, .hero-nav a{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-badge">welcome to the sketchbook</div>
+  <h1>Kiki Fujimura</h1>
+  <p class="tagline">Chibi doodles, gacha-life vibes, and the little stories that come with them.</p>
+  <nav class="hero-nav">
+    <a href="#about">About Me</a>
+    <a href="#series">Tier School Star</a>
+    <a href="#gallery">Character Gallery</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section id="about" class="about">
+    <div class="avatar">
+      <!-- Swap this div's content for: <img src="your-avatar.jpg" alt="Kiki Fujimura"> -->
+      your chibi avatar here
+    </div>
+    <div class="speech-bubble">
+      <span class="eyebrow">About Me</span>
+      <h2>Hi, I'm Kiki!</h2>
+      <p>I love drawing characters in chibi and gacha life style — big heads, bigger expressions, and outfits I'd probably never wear in real life but wish I could.</p>
+      <p>Just as much as drawing, I love making stories. I like giving every character a reason for being on the page — a personality, a rivalry, a soft spot — before I ever draw their outfit.</p>
+      <div class="tag-row">
+        <span class="tag-pill">Chibi Art</span>
+        <span class="tag-pill">Gacha Life Style</span>
+        <span class="tag-pill">Story Writer</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="series">
+    <span class="eyebrow">Currently Working On</span>
+    <div class="series-banner">
+      <h2>Tier School Star</h2>
+      <p>An ongoing series following 11 fifteen-year-olds navigating a school where everything — friendships, talent, drama — somehow ends up sorted into tiers. Sketches, character designs, and story bits are being posted here as I work through it.</p>
+      <!-- Feel free to replace the paragraph above with your own series description / logline. -->
+      <div class="series-meta">
+        <div><span>11</span><small>Characters</small></div>
+        <div><span>15</span><small>Years Old</small></div>
+        <div><span>WIP</span><small>Status</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="gallery-head">
+      <span class="eyebrow">Meet the Cast</span>
+      <h2>Tier School Star — Characters</h2>
+      <p>11 characters, 11 personalities. Tap through as more art gets added!</p>
+    </div>
+
+    <div class="grid">
+      <!--
+        CHARACTER CARD TEMPLATE
+        Duplicate this block for each of the 11 characters.
+        To add real artwork, replace the <span> inside .card-art with:
+        <img src="character-01.jpg" alt="Character Name from Tier School Star">
+      -->
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">S</div>
+        <div class="card-info">
+          <h3>Character 1</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">S</div>
+        <div class="card-info">
+          <h3>Character 2</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">A</div>
+        <div class="card-info">
+          <h3>Character 3</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">A</div>
+        <div class="card-info">
+          <h3>Character 4</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">A</div>
+        <div class="card-info">
+          <h3>Character 5</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">B</div>
+        <div class="card-info">
+          <h3>Character 6</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">B</div>
+        <div class="card-info">
+          <h3>Character 7</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">B</div>
+        <div class="card-info">
+          <h3>Character 8</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">C</div>
+        <div class="card-info">
+          <h3>Character 9</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">C</div>
+        <div class="card-info">
+          <h3>Character 10</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-art"><span>add character<br>art here</span></div>
+        <div class="tier-badge">?</div>
+        <div class="card-info">
+          <h3>Character 11</h3>
+          <p>role / tier goes here</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="display">Kiki Fujimura</div>
+  <p>Chibi art & original stories. Thanks for stopping by!</p>
+  <div class="social-row">
+    <a href="#">Instagram</a>
+    <a href="#">Twitter / X</a>
+    <a href="mailto:you@example.com">Email Me</a>
+  </div>
+</footer>
+
+</body>
+</html>
